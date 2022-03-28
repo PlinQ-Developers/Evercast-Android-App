@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_sunny"
+    android:id="@+id/weather_sun_fragment"
+    tools:context=".ui.weather.sun.WeatherSunFragment">
+
+    <RelativeLayout
+        android:id="@+id/weather_container"
+        android:layout_width="match_parent"
+        android:layout_height="270dp">
+
+
+        <ImageView
+            android:id="@+id/weather_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/image_description"
+            tools:src="@drawable/ic_sunny" />
+
+        <TextView
+            android:id="@+id/main_weather_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/font_black"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="60sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/main_weather_name"
+            android:layout_below="@+id/main_weather_value"
+            android:layout_marginTop="10dp"
+            android:text="Sunny"
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:fontFamily="@font/font_regular"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/weather_details_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/weather_container">
+
+
+        <LinearLayout
+            android:id="@+id/weather_latest_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:id="@+id/weather_min"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/min_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_black"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/app_white_500"
+                    android:textSize="@dimen/weather_value" />
+
+                <TextView
+                    android:id="@+id/min_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/min_value"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/app_white_500"
+                    android:fontFamily="@font/font_regular"
+                    android:text="min" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/weather_current"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/current_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_black"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/app_white_500"
+                    android:textSize="@dimen/weather_value" />
+
+                <TextView
+                    android:id="@+id/current_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/current_value"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/app_white_500"
+                    android:fontFamily="@font/font_regular"
+                    android:text="current" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/weather_max"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/max_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_black"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/app_white_500"
+                    android:textSize="@dimen/weather_value" />
+
+                <TextView
+                    android:id="@+id/max_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/max_value"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/app_white_500"
+                    android:fontFamily="@font/font_regular"
+                    android:text="max" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:visibility="gone"
+            android:layout_below="@+id/weather_latest_container"
+            android:id="@+id/updated_container">
+
+            <TextView
+                android:id="@+id/updated_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_semi"
+                android:gravity="center"
+                android:text="Last updated: Mon, Jan 13, 2022"
+                android:textSize="@dimen/updated" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/weather_week_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/updated_container">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/weather_list"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                tools:listitem="@layout/item_forecast"
+                android:clipToPadding="false"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

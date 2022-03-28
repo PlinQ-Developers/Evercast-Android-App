@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white_500"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <com.mapbox.maps.MapView
+        android:id="@+id/maps_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        mapbox:mapbox_cameraZoom="14" />
+
+    <RelativeLayout
+        android:id="@+id/current_weather_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/ic_card_bg"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/weather_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_medium"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/app_primary"
+            android:textSize="44sp" />
+
+        <TextView
+            android:id="@+id/weather_country_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weather_value"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/font_regular"
+            android:gravity="center"
+            android:text=""
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/weather_details_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/weather_country_name"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:id="@+id/weather_min_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/weather_min_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_semi"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/weather_min_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/weather_min_value"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/font_regular"
+                    android:gravity="center"
+                    android:text="Min"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/weather_current_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/weather_current_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_semi"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/weather_current_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/weather_current_value"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/font_regular"
+                    android:gravity="center"
+                    android:text="Current"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/weather_max_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/weather_max_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_semi"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/weather_max_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/weather_max_value"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/font_regular"
+                    android:gravity="center"
+                    android:text="Max"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/weather_more_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weather_details_container">
+
+            <Button
+                android:id="@+id/more_details_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/ic_button_bg"
+                android:fontFamily="@font/font_semi"
+                android:text="More Information"
+                android:textAllCaps="false"
+                android:textColor="@color/app_white_500"
+                android:textSize="@dimen/button_text"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/get_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="50dp"
+        android:clickable="true"
+        android:contentDescription="@string/button_description"
+        android:focusable="true"
+        android:src="@drawable/ic_location" />
+
+</RelativeLayout>

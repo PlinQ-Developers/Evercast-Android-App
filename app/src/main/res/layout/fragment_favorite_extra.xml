@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/favorite_extra_container"
+    android:background="@color/app_white_500"
+    android:padding="30dp"
+    tools:context=".ui.favorites.extra.FavoriteExtraFragment">
+
+
+    <RelativeLayout
+        android:id="@+id/disclaimer_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_centerInParent="true"
+        android:background="@color/app_white_200"
+        android:layout_marginBottom="50dp">
+
+        <TextView
+            android:id="@+id/disclaimer_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:gravity="center"
+            android:fontFamily="@font/font_bold"
+            android:textColor="@color/app_primary"
+            android:textSize="32sp"
+            android:text="Google API Permissions." />
+
+        <TextView
+            android:id="@+id/disclaimer_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/font_medium"
+            android:textSize="20sp"
+            android:layout_marginBottom="50dp"
+            android:textColor="@color/black"
+            android:layout_below="@id/disclaimer_title"
+            android:text="You do not have access to the Google Places API. Please register and get a valid API Key" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_button_bg"
+        android:textColor="@color/app_white_500"
+        android:text="I Understand"
+        android:fontFamily="@font/font_semi"
+        android:textSize="18sp"/>
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/favorite_list_fragment"
+    android:background="@color/app_white_500"
+    tools:context=".ui.favorites.list.FavoriteListFragment">
+
+    <RelativeLayout
+        android:id="@+id/fragment_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/font_black"
+            android:gravity="center"
+            android:text="Favorites"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/favorite_list_container"
+        android:layout_below="@+id/fragment_toolbar">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/favorite_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="8dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

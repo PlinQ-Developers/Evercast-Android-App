@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="apps.plinqdevelopers.evercast.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="apps.plinqdevelopers.evercast.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="apps.plinqdevelopers.evercast.ui.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="apps.plinqdevelopers.evercast.ui.dashboard.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboardFragment_to_favoriteListFragment"
+            app:destination="@id/favoriteListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_weatherSunFragment"
+            app:destination="@id/weatherSunFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_weatherRainFragment"
+            app:destination="@id/weatherRainFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_weatherCloudFragment"
+            app:destination="@id/weatherCloudFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteListFragment"
+        android:name="apps.plinqdevelopers.evercast.ui.favorites.list.FavoriteListFragment"
+        android:label="fragment_favorite_list"
+        tools:layout="@layout/fragment_favorite_list">
+        <action
+            android:id="@+id/action_favoriteListFragment_to_favoriteExtraFragment"
+            app:destination="@id/favoriteExtraFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteExtraFragment"
+        android:name="apps.plinqdevelopers.evercast.ui.favorites.extra.FavoriteExtraFragment"
+        android:label="fragment_favorite_extra"
+        tools:layout="@layout/fragment_favorite_extra" >
+        <argument
+            android:name="savedPlaceID"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherCloudFragment"
+        android:name="apps.plinqdevelopers.evercast.ui.weather.cloud.WeatherCloudFragment"
+        android:label="fragment_weather_cloud"
+        tools:layout="@layout/fragment_weather_cloud">
+        <argument
+            android:name="weatherArgs"
+            app:argType="apps.plinqdevelopers.evercast.data.domain.DomainWeather" />
+        <argument
+            android:name="locationLat"
+            app:argType="string" />
+        <argument
+            android:name="locationLong"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherRainFragment"
+        android:name="apps.plinqdevelopers.evercast.ui.weather.rain.WeatherRainFragment"
+        android:label="fragment_weather_rain"
+        tools:layout="@layout/fragment_weather_rain">
+        <argument
+            android:name="weatherArgs"
+            app:argType="apps.plinqdevelopers.evercast.data.domain.DomainWeather" />
+        <argument
+            android:name="locationLat"
+            app:argType="string" />
+        <argument
+            android:name="locationLong"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherSunFragment"
+        android:name="apps.plinqdevelopers.evercast.ui.weather.sun.WeatherSunFragment"
+        android:label="fragment_weather_sun"
+        tools:layout="@layout/fragment_weather_sun">
+        <argument
+            android:name="weatherArgs"
+            app:argType="apps.plinqdevelopers.evercast.data.domain.DomainWeather" />
+        <argument
+            android:name="locationLat"
+            app:argType="string" />
+        <argument
+            android:name="locationLong"
+            app:argType="string" />
+    </fragment>
+</navigation>

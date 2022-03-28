@@ -1,0 +1,194 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "281b54754cac24c7f9dc97c65008417f",
+    "entities": [
+      {
+        "tableName": "accountTable",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`accountID` TEXT NOT NULL, `username` TEXT NOT NULL, `email` TEXT NOT NULL, `password` TEXT NOT NULL, `created` TEXT NOT NULL, PRIMARY KEY(`accountID`))",
+        "fields": [
+          {
+            "fieldPath": "accountID",
+            "columnName": "accountID",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "username",
+            "columnName": "username",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "password",
+            "columnName": "password",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "created",
+            "columnName": "created",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "accountID"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "weatherTable",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`weatherID` INTEGER PRIMARY KEY AUTOINCREMENT, `Id` TEXT, `accountID` TEXT, `lat` TEXT, `locationID` TEXT, `locationName` TEXT, `locationTimezone` TEXT, `mainTemp` TEXT, `mainTempMin` TEXT, `mainTempMax` TEXT, `mainTempFeelsLike` TEXT, `weatherMain` TEXT, `version` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "weatherID",
+            "columnName": "weatherID",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Id",
+            "columnName": "Id",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "accountID",
+            "columnName": "accountID",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lat",
+            "columnName": "lat",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "locationID",
+            "columnName": "locationID",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "locationName",
+            "columnName": "locationName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "locationTimezone",
+            "columnName": "locationTimezone",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mainTemp",
+            "columnName": "mainTemp",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mainTempMin",
+            "columnName": "mainTempMin",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mainTempMax",
+            "columnName": "mainTempMax",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mainTempFeelsLike",
+            "columnName": "mainTempFeelsLike",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "weatherMain",
+            "columnName": "weatherMain",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "version",
+            "columnName": "version",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "weatherID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "weatherListTable",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`weatherID` TEXT NOT NULL, `dt` TEXT NOT NULL, `weatherName` TEXT NOT NULL, `weathervarue` TEXT NOT NULL, `Id` TEXT NOT NULL, PRIMARY KEY(`weatherID`))",
+        "fields": [
+          {
+            "fieldPath": "weatherID",
+            "columnName": "weatherID",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dt",
+            "columnName": "dt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weatherName",
+            "columnName": "weatherName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weathervarue",
+            "columnName": "weathervarue",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Id",
+            "columnName": "Id",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "weatherID"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '281b54754cac24c7f9dc97c65008417f')"
+    ]
+  }
+}

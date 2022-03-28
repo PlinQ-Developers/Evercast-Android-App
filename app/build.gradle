@@ -1,0 +1,124 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'dagger.hilt.android.plugin'
+    id("androidx.navigation.safeargs.kotlin")
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "apps.plinqdevelopers.evercast"
+        minSdk 24
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'com.google.android.gms:play-services-places:17.0.0'
+    implementation 'com.google.android.gms:play-services-fitness:21.0.1'
+    implementation 'com.google.android.libraries.places:places:2.5.0'
+    def googlePlay = "18.0.2"
+    implementation "com.google.android.gms:play-services-maps:$googlePlay"
+
+    def googleLocation = "19.0.1"
+    implementation "com.google.android.gms:play-services-location:$googleLocation"
+
+
+    def kotlin = "1.7.0"
+    implementation "androidx.core:core-ktx:$kotlin"
+
+    def appCompat = "1.4.1"
+    implementation "androidx.appcompat:appcompat:$appCompat"
+
+    def googleMaterial = "1.5.0"
+    implementation "com.google.android.material:material:$googleMaterial"
+
+    def constraintLayout = "2.1.3"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayout"
+
+    def navigationFragment = "2.4.1"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationFragment"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationFragment"
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    def junitTest = "4.13.2"
+    testImplementation "junit:junit:$junitTest"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+
+    def espressoTest = "3.4.0"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoTest"
+
+    def retrofitLibrary = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitLibrary"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitLibrary"
+
+    def daggerHilt = "2.40.5"
+    implementation "com.google.dagger:hilt-android:$daggerHilt"
+    kapt "com.google.dagger:hilt-android-compiler:$daggerHilt"
+
+    def lifecycleViewModel = "1.0.0-alpha03"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$lifecycleViewModel"
+    kapt "androidx.hilt:hilt-compiler:$lifecycleViewModel"
+
+    def glideImageLibrary = "4.12.0"
+    implementation "com.github.bumptech.glide:glide:$glideImageLibrary"
+    kapt "com.github.bumptech.glide:compiler:$glideImageLibrary"
+
+    def liveData = "2.4.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$liveData"
+
+    def room_version = "2.4.2"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+
+    def circularImageView = "3.1.0"
+    implementation "de.hdodenhof:circleimageview:$circularImageView"
+
+    def httpLoggingInterceptor = "5.0.0-alpha.3"
+    implementation "com.squareup.okhttp3:logging-interceptor:$httpLoggingInterceptor"
+
+    def jetpackDataStore = "1.0.0"
+    implementation "androidx.datastore:datastore-preferences:$jetpackDataStore"
+
+    def mapbox = "10.4.0"
+    implementation "com.mapbox.maps:android:$mapbox"
+
+    def geoJson = "6.2.0"
+    implementation "com.mapbox.mapboxsdk:mapbox-sdk-geojson:$geoJson"
+
+}

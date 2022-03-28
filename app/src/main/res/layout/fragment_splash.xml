@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/splash_fragment"
+    android:padding="25dp"
+    android:background="@color/app_white_500"
+    tools:context=".ui.splash.SplashFragment">
+
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/font_black"
+        android:text="@string/app_name_text"
+        android:textColor="@color/app_primary"
+        android:textSize="40sp" />
+
+
+
+    <TextView
+        android:id="@+id/app_powered_by"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/font_regular"
+        android:gravity="center"
+        android:text="@string/text_powered"
+        android:textSize="16sp" />
+
+
+</RelativeLayout>

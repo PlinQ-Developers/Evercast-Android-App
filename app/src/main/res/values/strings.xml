@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Evercast</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_powered">Powered by <b>Olexafort</b></string>
+    <string name="app_disclaimer">By creating an account, you agree to the <b>Terms of Service</b> provided by Evercast.</string>
+    <string name="image_description">Image description</string>
+    <string name="map_description">Google map</string>
+    <string name="button_description">Fab</string>
+
+    <string name="mapbox_access_token">pk.eyJ1IjoidGFzcWkiLCJhIjoiY2tpOHEwaWU2MDgzcDJxcGoya292cTJzaSJ9.Yw7YSa_t5vfrLcTdlKMbag</string>
+    <string name="app_name_text">Evercast</string>
+    <string name="goto_register_text">Dont have an account? <b>Register</b></string>
+    <string name="weather_rain">Rainy</string>
+    <string name="PLACES_API_KEY">xxx</string>
+</resources>
